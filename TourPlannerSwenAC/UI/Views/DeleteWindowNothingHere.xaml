@@ -9,6 +9,6 @@
       Title="DeleteWindowNothingHere">
 
     <Grid Background="#333333">
-        <TextBlock Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="48" FontWeight="Bold" TextWrapping="Wrap">Nothing But Us Here</TextBlock>
+        <TextBlock Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="48" FontWeight="Bold" TextWrapping="Wrap"><Run Language="de-at" Text="Coming Soon"/></TextBlock>
     </Grid>
 </Page>
