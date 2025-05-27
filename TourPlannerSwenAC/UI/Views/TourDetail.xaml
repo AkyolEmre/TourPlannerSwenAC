@@ -155,22 +155,40 @@
                         </Grid>
                         <Grid Grid.Row="11">
                             <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" MaxWidth="10"></ColumnDefinition>
-                                <ColumnDefinition Width="*" MaxWidth="200"></ColumnDefinition>
-                                <ColumnDefinition Width="*"></ColumnDefinition>
-                                <ColumnDefinition Width="*" MaxWidth="30"></ColumnDefinition>
+                                <ColumnDefinition Width="*" MaxWidth="10"/>
+                                <ColumnDefinition Width="*" MaxWidth="200"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*" MaxWidth="30"/>
                             </Grid.ColumnDefinitions>
+
+                            <!-- Label -->
                             <Grid Grid.Column="1">
                                 <Grid.RowDefinitions>
-                                    <RowDefinition Height="*" MaxHeight="50"></RowDefinition>
-                                    <RowDefinition Height="*"></RowDefinition>
+                                    <RowDefinition Height="*" MaxHeight="50"/>
+                                    <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                                <Label Grid.Row="0" FontSize="28" Foreground="White" VerticalAlignment="Center" HorizontalAlignment="Left" Content="Image:"></Label>
+                                <Label Grid.Row="0"
+           FontSize="28"
+           Foreground="White"
+           VerticalAlignment="Center"
+           HorizontalAlignment="Left"
+           Content="Image:"/>
                             </Grid>
-                            <Rectangle Grid.Column="2" Fill="White"></Rectangle>
 
-                            <Image Grid.Column="2" Stretch="Fill" Source="{Binding ImagePath}"></Image>
+                            <!-- Container für Hintergrund + dynamisches Bild -->
+                            <Grid Grid.Column="2">
+                                <!-- statischer Hintergrund -->
+                                <Grid.Background>
+                                    <ImageBrush ImageSource="Images/hero_maps_static_api.png"
+                  Stretch="UniformToFill"/>
+                                </Grid.Background>
+
+                                <!-- dynamisches Bild oben drüber -->
+                                <Image Stretch="Fill"
+           Source="{Binding ImagePath}"/>
+                            </Grid>
                         </Grid>
+
                         <Grid Grid.Row="12"></Grid>
                         <Grid Grid.Row="13">
 
