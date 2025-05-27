@@ -89,7 +89,7 @@ The interface is organized into a **three-column layout**, providing a clean and
 
 Mockup             |  Implementation
 :-------------------------:|:-------------------------:
-| ![Mockup](TourPlanner/Wireframe/Mockup.png)      | ![Implementation](TourPlanner/Wireframe/Implementation.jpg) |
+| ![Mockup](TourPlannerSwenAC/Wireframe/Mockup.png)      | ![Implementation](TourPlannerSwenAC/Wireframe/Implementation.jpg) |
 
 ## Implementation
 
