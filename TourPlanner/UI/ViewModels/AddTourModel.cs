@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
@@ -56,6 +57,18 @@ namespace UI.ViewModels
                 string.IsNullOrWhiteSpace(TourLog.Comment))
             {
                 MessageBox.Show("Required Input is Missing", "Fehler", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
+            if (!DateTime.TryParseExact(
+            TourLog.Date,
+            "dd.MM.yyyy",
+            CultureInfo.InvariantCulture,
+            DateTimeStyles.None,
+            out _))
+            {
+                MessageBox.Show("Date must be in the format DD.MM.YYYY!",
+                                "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 

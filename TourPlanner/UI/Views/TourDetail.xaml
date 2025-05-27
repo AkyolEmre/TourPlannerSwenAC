@@ -337,7 +337,7 @@
                                                 <RowDefinition Height="*"></RowDefinition>
                                             </Grid.RowDefinitions>
                                             <Label Grid.Column="0" Grid.Row="0" Foreground="White" FontSize="28" VerticalAlignment="Bottom">Date:</Label>
-                                            <custom:PlaceholderTextBoxControl Grid.Column="1" Grid.Row="2" FontSize="26" Placeholder="Date" VerticalContentAlignment="Center"  FontWeight="Bold" MaxLength="32" Text="{Binding TourLog.Date, UpdateSourceTrigger=PropertyChanged}"></custom:PlaceholderTextBoxControl>
+                                            <custom:PlaceholderTextBoxControl Grid.Column="1" Grid.Row="2" FontSize="26" Placeholder="dd.MM.yyyy" VerticalContentAlignment="Center"  FontWeight="Bold" MaxLength="32" Text="{Binding TourLog.Date, UpdateSourceTrigger=PropertyChanged}"></custom:PlaceholderTextBoxControl>
                                             <!--<TextBox Grid.Column="1" Grid.Row="2" FontSize="26" FontWeight="Bold" MaxLength="32" Text="{Binding NewTour.From, UpdateSourceTrigger=PropertyChanged}"></TextBox>                                        -->
                                         </Grid>
                                         <Grid Grid.Column="1">
