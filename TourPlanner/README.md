@@ -89,7 +89,7 @@ The interface is organized into a **three-column layout**, providing a clean and
 
 Mockup             |  Implementation
 :-------------------------:|:-------------------------:
-(Wireframe\Mockup.png) | (Wireframe\Implementation.jpg) 
+| ![Mockup](Wireframe/Mockup.png)      | ![Implementation](Wireframe/Implementation.jpg) |
 
 ## Implementation
 
