@@ -37,24 +37,57 @@ namespace UI.ViewModels
 
         private void SaveTourLog(object parameter)
         {
-            Console.WriteLine("SaveTour aufgerufen");
+            Console.WriteLine("SaveTourLog aufgerufen");
 
+            // Null-Check
             if (TourLog == null)
             {
-                MessageBox.Show("Tour Log is null!", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Tour Log ist null!", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(TourLog.Date) || string.IsNullOrWhiteSpace(TourLog.Time) ||
-                string.IsNullOrWhiteSpace(TourLog.Difficulty) || string.IsNullOrWhiteSpace(TourLog.Duration) ||
-                string.IsNullOrWhiteSpace(TourLog.Distance) || string.IsNullOrWhiteSpace(TourLog.Rating) ||
+            // Pflichtfelder-Check
+            if (string.IsNullOrWhiteSpace(TourLog.Date) ||
+                string.IsNullOrWhiteSpace(TourLog.Time) ||
+                string.IsNullOrWhiteSpace(TourLog.Difficulty) ||
+                string.IsNullOrWhiteSpace(TourLog.Duration) ||
+                string.IsNullOrWhiteSpace(TourLog.Distance) ||
+                string.IsNullOrWhiteSpace(TourLog.Rating) ||
                 string.IsNullOrWhiteSpace(TourLog.Comment))
             {
                 MessageBox.Show("Required Input is Missing", "Fehler", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
 
-            TourLogs.TourLog newLog = new TourLogs.TourLog
+            // Numerische Validierung
+            if (!int.TryParse(TourLog.Time, out _))
+            {
+                MessageBox.Show("The field Time needs to be a number!", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (!int.TryParse(TourLog.Difficulty, out _))
+            {
+                MessageBox.Show("The field Difficulty needs to be a number!", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (!int.TryParse(TourLog.Distance, out _))
+            {
+                MessageBox.Show("The field Distance needs to be a number!", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (!int.TryParse(TourLog.Duration, out _))
+            {
+                MessageBox.Show("The field Duration needs to be a number!", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+            if (!int.TryParse(TourLog.Rating, out _))
+            {
+                MessageBox.Show("The field Rating needs to be a number!", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            // Neues Log-Objekt anlegen
+            var newLog = new TourLogs.TourLog
             {
                 IDTourLogs = TourLog.TourLogsTable.Count + 1,
                 Date = TourLog.Date,
@@ -66,10 +99,11 @@ namespace UI.ViewModels
                 Duration = TourLog.Duration,
             };
 
+            // In die Liste hinzufügen
             TourLog.TourLogsTable.Add(newLog);
-
             Console.WriteLine($"Neues TourLog hinzugefügt mit ID: {newLog.IDTourLogs}");
 
+            // Felder zurücksetzen
             TourLog.Date = string.Empty;
             TourLog.Time = string.Empty;
             TourLog.Difficulty = string.Empty;

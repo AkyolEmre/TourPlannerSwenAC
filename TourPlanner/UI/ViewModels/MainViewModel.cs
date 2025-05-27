@@ -283,6 +283,18 @@ namespace UI.ViewModels
                 return;
             }
 
+            if (!int.TryParse(NewTour.Distance, out _))
+            {
+                MessageBox.Show("The field Tour Distance needs to be a number!", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
+            if (!int.TryParse(NewTour.EstimatedTime, out _))
+            {
+                MessageBox.Show("The field Estimated Time needs to be a number!", "Fehler", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             AddTourModel Tour = new AddTourModel
             {
                 ID = Tours.Count,
