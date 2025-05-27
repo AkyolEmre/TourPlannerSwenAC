@@ -167,7 +167,7 @@
                     <!-- <TextBox Grid.Column="1" Grid.Row="2" FontSize="26" FontWeight="Bold" MaxLength="32" Text="{Binding NewTour.EstimatedTime, UpdateSourceTrigger=PropertyChanged}"></TextBox>       -->
                 </Grid>
             </Grid>
-            <Grid Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Grid Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0,0,0,150">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" MaxWidth="50"></ColumnDefinition>
                     <ColumnDefinition Width="10*"></ColumnDefinition>
@@ -212,6 +212,58 @@
                     </Grid>
                 </Button>
 
+            </Grid>
+            <!-- New: ChildFriendliness & Popularity -->
+            <Grid Grid.Row="3" Grid.ColumnSpan="1" HorizontalAlignment="Stretch" VerticalAlignment="Bottom">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+
+                <!-- ChildFriendliness -->
+                <Grid Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" MaxWidth="50"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="1*" MaxWidth="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*" MaxHeight="1"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="1" Grid.Row="0" Foreground="White" FontSize="28" VerticalAlignment="Bottom">Child Friendliness:</Label>
+                    <!-- statischer Wert 88 statt Bindung -->
+                    <TextBlock Grid.Column="1" Grid.Row="2"
+                        Text="88"
+                        FontSize="22"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"/>
+                </Grid>
+
+                <!-- Popularity -->
+                <Grid Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" MaxWidth="50"/>
+                        <ColumnDefinition Width="10*"/>
+                        <ColumnDefinition Width="1*" MaxWidth="50"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*" MaxHeight="5"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Grid.Column="1" Grid.Row="0" Foreground="White" FontSize="28" VerticalAlignment="Bottom">Popularity:</Label>
+                    <TextBlock Grid.Column="1" Grid.Row="2"
+                        Text="9"
+                        FontSize="22"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"/>
+                </Grid>
             </Grid>
         </Grid>
         <Grid Grid.Row="3" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">

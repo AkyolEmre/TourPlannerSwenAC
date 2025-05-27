@@ -11,5 +11,8 @@
         public int Distance { get; set; }
         public int Estimated_Time { get; set; }
         public string Route_Information { get; set; }
+        public int Popularity { get; set; } = 9;
+        public double ChildFriendliness { get; set; } = 92;
+
     }
 }
