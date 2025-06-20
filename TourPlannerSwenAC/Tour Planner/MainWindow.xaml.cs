@@ -42,7 +42,7 @@ namespace Tour_Planner
         {
             if (tourListBox.SelectedItem != null)
             {
-                Tour selectedTour = tourListBox.SelectedItem as Tour;
+                Tour ?selectedTour = tourListBox.SelectedItem as Tour;
                 Log.Info($"Tour selected: {selectedTour.Name}");
                 (DataContext as TourPlannerVM).SelectedTour = selectedTour;
             }
