@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access">
+  <Comment CommentText="Business Layer">
+    <Position X="11.188" Y="0.5" Height="0.344" Width="3.804" />
+  </Comment>
+  <Comment CommentText="Data Access Layer">
+    <Position X="8.25" Y="0.5" Height="0.344" Width="2.2" />
+  </Comment>
+  <Comment CommentText="Data Operations">
+    <Position X="8.344" Y="4.365" Height="0.344" Width="2.2" />
+  </Comment>
+  <Comment CommentText="Models">
+    <Position X="3.677" Y="0.5" Height="0.344" Width="3.898" />
+  </Comment>
+  <Comment CommentText="View Model">
+    <Position X="0.896" Y="0.5" Height="0.344" Width="2.2" />
+  </Comment>
+  <Comment CommentText="Views">
+    <Position X="0.823" Y="4.333" Height="0.344" Width="4.46" />
+  </Comment>
+  <Class Name="Tour_Planner.BL.GeoLocationAPI.CalculatedRouteResponse" Collapsed="true">
+    <Position X="13" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BL\GeoLocationAPI\CalculatedRouteResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tour_Planner.BL.GeoLocationAPI.GeoSearchResponse" Collapsed="true">
+    <Position X="13" Y="1.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BL\GeoLocationAPI\GeoSearchResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tour_Planner.BL.RouteService" Collapsed="true">
+    <Position X="11.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEAAABgAAAAAABAAACAAAAAgAAAAQAA=</HashCode>
+      <FileName>BL\RouteService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tour_Planner.BL.TourService" Collapsed="true">
+    <Position X="11.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAIAAAAAAAAAAAAAAAABBAAAAAAAIAAA=</HashCode>
+      <FileName>BL\TourService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Tour_Planner.DAL.TourContext" Collapsed="true">
+    <Position X="8.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAEAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>DAL\TourContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tour_Planner.DAL.TourRepository" Collapsed="true">
+    <Position X="8.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAIBIAAAAAAAAAAAAAAAAABAAAAAAAIAAA=</HashCode>
+      <FileName>DAL\TourRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="ExportImportService" Collapsed="true">
+    <Position X="8.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAgACAAAAAAIAAAAEAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataOperations\ExportImportService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ReportGenerator" Collapsed="true">
+    <Position X="8.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgCAAAAAQAAAAAAAAAAAAAAAAAggAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataOperations\ReportGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tour_Planner.Models.Tour" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="3.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgASAAAUCBAgAAgAIAAAAAQAgAAMAgDAAAAAAAAAEAA=</HashCode>
+      <FileName>Models\Tour.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Tour_Planner.Models.TourLog" Collapsed="true">
+    <Position X="3.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAiAAAEAAAAAQAAMAAAAAAAhAAAAAUAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\TourLog.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Tour_Planner.ViewModels.RelayCommand" Collapsed="true">
+    <Position X="1.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEACAAQAAECAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\RelayCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Tour_Planner.ViewModels.TourPlannerVM" Collapsed="true">
+    <Position X="1.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KJBQyMYBCioaBPosKhoARAADwUyahhAFQEKAAGEUAGA=</HashCode>
+      <FileName>ViewModels\TourPlannerVM.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Tour_Planner.AddTourLogs" Collapsed="true">
+    <Position X="1.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AddTourLogs.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Tour_Planner.AddTours" Collapsed="true">
+    <Position X="3.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>AddTours.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Tour_Planner.DAL.App" Collapsed="true">
+    <Position X="3.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAIAAAAAAAAAAAAAAAAAQAAAAgAAgBAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Tour_Planner.MainWindow" Collapsed="true">
+    <Position X="1.25" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAIAAAAAAAAAIAAAAgAAAEIAAAAAEAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="Tour_Planner.BL.ITourService" Collapsed="true">
+    <Position X="11.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAIAIAAAAAAAAAAAAAAAAABAAAAAAAIAAA=</HashCode>
+      <FileName>BL\ITourService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Tour_Planner.DAL.ITourRepository" Collapsed="true">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAIAIAAAAAAAAAAAAAAAAABAAAAAAAIAAA=</HashCode>
+      <FileName>DAL\ITourRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Tour_Planner.Models.TransportType" Collapsed="true">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAAAAAAAAAAABAIAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\Tour.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Tour_Planner.Models.ExportFormat" Collapsed="true">
+    <Position X="5.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACCAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>Models\Tour.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Tour_Planner.Models.DifficultyLevel" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAEkAAA=</HashCode>
+      <FileName>Models\TourLog.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
