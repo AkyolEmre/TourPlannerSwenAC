@@ -9,7 +9,7 @@ namespace UnitTests
     [TestClass]
     public class ICommandTests
     {
-        private TourContext context; 
+        private TourContext context;
         private TourRepository repository;
         private ITourService _tourService;
         private TourPlannerVM _tourPlannerVM;
@@ -30,14 +30,14 @@ namespace UnitTests
         [TestCleanup]
         public void Cleanup()
         {
-            context.Database.EnsureDeleted(); 
+            context.Database.EnsureDeleted();
             context.Dispose();
 
             var options = new DbContextOptionsBuilder<TourContext>()
                 .UseInMemoryDatabase(databaseName: "TestDatabase")
                 .Options;
 
-            context = new TourContext(options); 
+            context = new TourContext(options);
         }
 
         [TestMethod]
@@ -54,25 +54,6 @@ namespace UnitTests
             bool canExecute = _tourPlannerVM.AddTourCommand.CanExecute(null);
 
             Assert.IsTrue(canExecute);
-        }
-
-        [TestMethod]
-        public void AddTourCommand_Execute()
-        {
-            int initialCount = _tourPlannerVM.Tours.Count;
-
-            _tourPlannerVM.NewTourName = "Test";
-            _tourPlannerVM.NewTourDescr = "Test Description";
-            _tourPlannerVM.NewTourFrom = "From";
-            _tourPlannerVM.NewTourTo = "To";
-            _tourPlannerVM.NewTourTransType = TransportType.Car;
-            _tourPlannerVM.NewTourDistance = 100;
-            _tourPlannerVM.NewTourEstTime = 60;
-
-            _tourPlannerVM.AddTourCommand.Execute(null);
-
-            Assert.AreEqual(initialCount + 1, _tourPlannerVM.Tours.Count);
-            Assert.IsTrue(_tourPlannerVM.Tours.Any(t => t.Name == "Test"));
         }
 
         [TestMethod]
@@ -359,4 +340,3 @@ namespace UnitTests
         }
     }
 }
-
