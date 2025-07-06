@@ -47,13 +47,13 @@
                     <StackPanel x:Name="hamburgerMenu" Background="#333333" Grid.Column="0" Grid.Row="1" Grid.RowSpan="4" Grid.ColumnSpan="1">
                         <ToggleButton x:Name="hamburgerToggleButton" Content="☰" FontSize="25" Foreground="White" Background="#333333" BorderBrush="#333333" Checked="HamburgerMenu_Checked" Unchecked="HamburgerMenu_Unchecked"/>
                         <StackPanel x:Name="menuItemsPanel" Orientation="Vertical" Visibility="Collapsed">
-                            <Button Background="#333333" Margin="5" Command="{Binding TourReportCommand}">
+                            <Button x:Name="ExportTourButton" Background="#333333" Margin="5" Command="{Binding TourReportCommand}">
                                 <Image Source="/Images/fileDownload.png" Width="16" Height="16"/>
                                 <Button.ToolTip>
                                     <ToolTip Content="Download Tour Report" Placement="Right"/>
                                 </Button.ToolTip>
                             </Button>
-                            <Button Background="#333333" Margin="5" Command="{Binding SummarizedTourReportCommand}">
+                            <Button x:Name="ExportSummaryButton" Background="#333333" Margin="5" Command="{Binding SummarizedTourReportCommand}">
                                 <Image Source="/Images/SummarizedFileDownLoad.png" Width="16" Height="16"/>
                                 <Button.ToolTip>
                                     <ToolTip Content="Download Summarized Tour Report" Placement="Right"/>
