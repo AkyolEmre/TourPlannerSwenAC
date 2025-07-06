@@ -41,7 +41,7 @@ namespace Tour_Planner.ViewModels
         public string newtotalDistance;
         public string newtotalTime;
         public int newrating;
-
+        public Action<string, string, string> SaveFileDialogRequested { get; set; }
         public TourPlannerVM(ITourService tourService)
         {
             filteredTours = new ObservableCollection<Tour>();
@@ -49,6 +49,7 @@ namespace Tour_Planner.ViewModels
             selectedTour = new Tour();
             tourLogsSelectedTour = new Tour();
             selectedTourLog = new TourLog();
+
 
             newTourName = string.Empty;
             newTourDescr = string.Empty;
@@ -76,8 +77,35 @@ namespace Tour_Planner.ViewModels
             DeleteTourLogCommand = new RelayCommand(o => DeleteTourLog());
             SaveTourLogCommand = new RelayCommand(o => SaveTourLog());
 
-            TourReportCommand = new RelayCommand(o => { TourReport(); ShowPopup("Information for Single-Tour-Report"); });
-            SummarizedTourReportCommand = new RelayCommand(o => { SummarizedTourReport(); ShowPopup("Information for Summarized Tour Report"); });
+            TourReportCommand = new RelayCommand(
+                _ =>
+                {
+                    if (SelectedTour == null)
+                    {
+                        ShowPopup("Bitte zuerst eine Tour auswählen.");
+                        return;
+                    }
+                    SaveFileDialogRequested?.Invoke(
+                        "PDF Files (*.pdf)|*.pdf",
+                        $"{SelectedTour.Name}_Report.pdf",
+                        "Speicherort für Einzel-Tour-Report wählen"
+                    );
+                },
+                _ => true
+            );
+
+            SummarizedTourReportCommand = new RelayCommand(
+                _ =>
+                {
+                    SaveFileDialogRequested?.Invoke(
+                        "PDF Files (*.pdf)|*.pdf",
+                        $"AllToursReport_{DateTime.Now:yyyyMMddHHmmss}.pdf",
+                        "Speicherort für All-Tours-Report wählen"
+                    );
+                },
+                _ => true
+            );
+
             ExportTourDataCommand = new RelayCommand(o => { ExportTourData(); ShowPopup("Information for Export Tour Data"); });
             ImportTourDataCommand = new RelayCommand(filePath => ImportTourData(filePath));
 
