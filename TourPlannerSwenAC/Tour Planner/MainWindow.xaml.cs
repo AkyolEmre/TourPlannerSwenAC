@@ -96,7 +96,7 @@ namespace Tour_Planner
                 return;
 
             // Je nach Dateiendung den richtigen Report aufrufen
-            if (defaultFileName.EndsWith("_Report.pdf"))
+            if (defaultFileName.EndsWith("Summary.pdf"))
             {
                 // hier alle Tours exportieren
                 ReportGenerator.GenerateTourReport(

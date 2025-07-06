@@ -99,7 +99,7 @@ namespace Tour_Planner.ViewModels
                 {
                     SaveFileDialogRequested?.Invoke(
                         "PDF Files (*.pdf)|*.pdf",
-                        $"AllToursReport_{DateTime.Now:yyyyMMddHHmmss}.pdf",
+                        $"Summary.pdf",
                         "Speicherort für All-Tours-Report wählen"
                     );
                 },
