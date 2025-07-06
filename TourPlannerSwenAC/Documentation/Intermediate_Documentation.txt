@@ -1,0 +1,11 @@
+The UX protocol for the Tour Planner WPF application is as follows:
+
+The application comprises a TabControl governing the main view, with tabs labeled "Home," "Tour," and "TourLogs" facilitating navigation between primary functionalities. A horizontal navigation bar ("Menu") provides quick access to tours and tour details.
+
+The "Home" tab furnishes an overview of all tours and tour logs, inclusive of a search bar for filtering tours. The tour list exhibits all extant tours, while the detail view showcases the selected tour on a Google Maps display. The tour logs table displays all logs pertinent to the selected tour.
+
+The "Tour" tab enables the addition, editing, and deletion of tours via a form inputting tour details such as name, description, start, and end. The tour list presents all extant tours, selectable from a dropdown menu. Buttons for adding, updating, and deleting tours are available.
+
+The "TourLogs" tab permits the addition, editing, and deletion of tour logs via a form inputting log details like date, comment, difficulty, etc. The tour log list displays all logs for the chosen tour, selectable from a dropdown menu. Buttons for adding, saving, and deleting tour logs are provided.
+
+A mockup of the WPF-application is also appended.
