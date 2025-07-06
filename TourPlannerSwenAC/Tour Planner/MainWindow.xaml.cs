@@ -8,6 +8,7 @@ using Tour_Planner.DAL;
 using Tour_Planner.BL;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Win32;
+using System.Windows.Input;
 
 
 namespace Tour_Planner
@@ -24,9 +25,16 @@ namespace Tour_Planner
 
             InitializeComponent();
             _tourService = tourService;
-            DataContext = new TourPlannerVM(_tourService);
 
-            ((TourPlannerVM)DataContext).RefreshMap = UpdateMapWebView;
+            // VM erstellen und DataContext setzen
+            var vm = new TourPlannerVM(_tourService);
+            DataContext = vm;
+
+            // Map-Refresh zuweisen
+            vm.RefreshMap = UpdateMapWebView;
+
+            // Unser neues Event abonnieren
+            vm.SaveFileDialogRequested += OnSaveFileDialogRequested;
         }
 
         protected async Task UpdateMapWebView()
@@ -70,5 +78,50 @@ namespace Tour_Planner
         {
             menuItemsPanel.Visibility = Visibility.Collapsed;
         }
+
+        private void OnSaveFileDialogRequested(string filter, string defaultFileName, string title)
+        {
+            var dlg = new SaveFileDialog
+            {
+                Filter = filter,
+                FileName = defaultFileName,
+                Title = title
+            };
+
+            if (dlg.ShowDialog() != true)
+                return;
+
+            // DataContext holen
+            if (!(DataContext is TourPlannerVM vm))
+                return;
+
+            // Je nach Dateiendung den richtigen Report aufrufen
+            if (defaultFileName.EndsWith("_Report.pdf"))
+            {
+                // hier alle Tours exportieren
+                ReportGenerator.GenerateTourReport(
+                    vm.SelectedTour,
+                    dlg.FileName
+                    
+                );
+            }
+            else
+            {
+                // nur die aktuell ausgewählte Tour
+                if (vm.SelectedTour == null)
+                {
+                    MessageBox.Show("Bitte zuerst eine Tour auswählen.", "Fehler", MessageBoxButton.OK, MessageBoxImage.Warning);
+                    return;
+                }
+
+                ReportGenerator.GenerateSummarizeReport(
+                    vm.Tours,      // IEnumerable<Tour>
+                    dlg.FileName   // der vom Dialog gewählte Pfad
+                );
+            }
+
+            MessageBox.Show("Export erfolgreich!", "Info", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
     }
 }
