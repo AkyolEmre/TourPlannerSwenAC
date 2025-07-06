@@ -100,9 +100,8 @@ namespace Tour_Planner
             {
                 // hier alle Tours exportieren
                 ReportGenerator.GenerateTourReport(
-                    vm.SelectedTour,
-                    dlg.FileName
-                    
+                    vm.Tours,      // IEnumerable<Tour>
+                    dlg.FileName   // der vom Dialog gewählte Pfad
                 );
             }
             else
@@ -115,8 +114,8 @@ namespace Tour_Planner
                 }
 
                 ReportGenerator.GenerateSummarizeReport(
-                    vm.Tours,      // IEnumerable<Tour>
-                    dlg.FileName   // der vom Dialog gewählte Pfad
+                    vm.SelectedTour,
+                    dlg.FileName
                 );
             }
 
